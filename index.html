@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 1</title>
+    <link rel="stylesheet" href="palamuti.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="10events.html">Page 2</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-con">
+      <div class="top">
+        <!-- <p class="title">Change Image</p> -->
+        <div class="left">
+          <img
+            src="https://images.pexels.com/photos/1162361/pexels-photo-1162361.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt=""
+            id="img1"
+          />
+          <button class="pik" onclick="changeimg1()">Change</button>
+        </div>
+        <div class="mid">
+          <img
+            src="https://images.pexels.com/photos/176837/pexels-photo-176837.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt=""
+            id="img2"
+          />
+          <button class="pik" onclick="changeimg2()">Change</button>
+        </div>
+        <div class="right">
+          <img
+            src="https://images.pexels.com/photos/1337384/pexels-photo-1337384.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt=""
+            id="img3"
+          />
+          <button class="pik" onclick="changeimg3()">Change</button>
+        </div>
+      </div>
+      <div class="bot">
+        <!-- <p class="title">Change Video</p> -->
+        <div class="left">
+          <video controls id="vid1">
+            <source
+              src="https://player.vimeo.com/external/332871723.sd.mp4?s=b5508f4bb0d446e1a25cb53a3364be565b657237&profile_id=164&oauth2_token_id=57447761"
+            />
+          </video>
+          <button class="pik" onclick="vid1()">Change</button>
+        </div>
+
+        <div class="mid">
+          <video controls id="vid2">
+            <source
+              src="https://player.vimeo.com/external/297888102.sd.mp4?s=b9b76b12df9767bcc48ab7e33c3c9c5a5f38a269&profile_id=164&oauth2_token_id=57447761"
+            />
+          </video>
+          <button class="pik" onclick="vid2()">Change</button>
+        </div>
+
+        <div class="right">
+          <video controls id="vid3">
+            <source
+              src="https://player.vimeo.com/external/297888097.sd.mp4?s=03dd8f3554e65f220699d2cdf55a3b1020d66b28&profile_id=164&oauth2_token_id=57447761"
+            />
+          </video>
+          <button class="pik" onclick="vid3()">Change</button>
+        </div>
+      </div>
+    </div>
+    <script src="functions.js"></script>
+  </body>
+</html>

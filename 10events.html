@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Events Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .event-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .event-box {
+        width: 150px;
+        height: 100px;
+        background-color: #3498db;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .event-box:focus {
+        outline: none;
+      }
+
+      .event-box:hover {
+        background-color: #e74c3c;
+      }
+      input {
+        width: 80%;
+      }
+      .navbar {
+        background-color: #333; /* Background color for the navigation bar */
+        padding: 10px 0; /* Add some padding to the top and bottom */
+        width: 50vw;
+        margin: auto;
+        border-radius: 1rem;
+        font-family: monospace;
+        font-size: 2rem;
+      }
+
+      .nav-list {
+        list-style-type: none;
+        padding: 0;
+        text-align: center; /* Center-align the navigation links */
+      }
+
+      .nav-item {
+        display: inline;
+        margin-right: 20px; /* Add spacing between navigation items */
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: #fff; /* Text color for the links */
+        font-weight: bold; /* Make the text bold */
+        transition: color 0.3s; /* Smooth color transition on hover */
+      }
+
+      .nav-link:hover {
+        color: #ff9900; /* Change the text color to orange on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="10events.html">Page 2</a>
+        </li>
+      </ul>
+    </nav>
+    <h1>10 Events | ite233 exam</h1>
+    <div class="event-container">
+      <div class="event-box" id="clickEvent">Click Me</div>
+      <div class="event-box" id="blurEvent" tabindex="0">Focus and Blur</div>
+      <div class="event-box" id="changeEvent">
+        <input type="text" id="textInput" placeholder="Type here" />
+      </div>
+      <div class="event-box" id="doubleClickEvent">Double Click Me</div>
+      <div class="event-box" id="focusInEvent" tabindex="0">Focus In</div>
+      <div class="event-box" id="focusOutEvent" tabindex="0">Focus Out</div>
+      <div class="event-box" id="mouseOverEvent">Mouse Over</div>
+      <div class="event-box" id="resizeEvent">Resize Me</div>
+      <div class="event-box event-box animation" id="animationStartEvent">
+        Animation Start
+      </div>
+      <div class="event-box event-box animation" id="animationEndEvent">
+        Animation End
+      </div>
+    </div>
+
+    <script>
+      // JavaScript to handle the events
+      const clickEventDiv = document.getElementById("clickEvent");
+      clickEventDiv.addEventListener("click", function () {
+        this.style.backgroundColor = "#27ae60";
+      });
+
+      const blurEventDiv = document.getElementById("blurEvent");
+      blurEventDiv.addEventListener("focus", function () {
+        this.style.backgroundColor = "#f1c40f";
+      });
+      blurEventDiv.addEventListener("blur", function () {
+        this.style.backgroundColor = "#3498db";
+      });
+
+      const changeEventInput = document.getElementById("textInput");
+      changeEventInput.addEventListener("input", function () {
+        this.parentNode.style.backgroundColor = "#e74c3c";
+      });
+
+      const doubleClickEventDiv = document.getElementById("doubleClickEvent");
+      doubleClickEventDiv.addEventListener("dblclick", function () {
+        this.style.backgroundColor = "#9b59b6";
+      });
+
+      const focusInEventDiv = document.getElementById("focusInEvent");
+      focusInEventDiv.addEventListener("focusin", function () {
+        this.style.backgroundColor = "#2ecc71";
+      });
+
+      const focusOutEventDiv = document.getElementById("focusOutEvent");
+      focusOutEventDiv.addEventListener("focusout", function () {
+        this.style.backgroundColor = "#e67e22";
+      });
+
+      const mouseOverEventDiv = document.getElementById("mouseOverEvent");
+      mouseOverEventDiv.addEventListener("mouseover", function () {
+        this.style.backgroundColor = "#f39c12";
+      });
+
+      const resizeEventDiv = document.getElementById("resizeEvent");
+      window.addEventListener("resize", function () {
+        resizeEventDiv.textContent = "Resized!";
+        resizeEventDiv.style.backgroundColor = "#3498db";
+      });
+
+      const animationStartEventDiv = document.getElementById(
+        "animationStartEvent"
+      );
+      animationStartEventDiv.addEventListener("animationstart", function () {
+        this.style.backgroundColor = "#f1c40f";
+      });
+
+      const animationEndEventDiv = document.getElementById("animationEndEvent");
+      animationEndEventDiv.addEventListener("animationend", function () {
+        this.style.backgroundColor = "#3498db";
+      });
+    </script>
+  </body>
+</html>
